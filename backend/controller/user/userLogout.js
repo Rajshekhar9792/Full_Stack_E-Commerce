@@ -2,8 +2,8 @@ async function userLogout(req,res){
     try{
 
         const tokenOption = {
-            // httpOnly : true,
-            // secure : true,
+            httpOnly : true,
+            secure : true,
             sameSite : 'None'
         }
 

@@ -31,8 +31,8 @@ async function userSignInController(req,res){
         const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET_KEY, { expiresIn: 60 * 60 * 8 });
 
         const tokenOption = {
-            // httpOnly : true,
-            // secure : true,
+            httpOnly : true,
+            secure : true,
             sameSite : 'None'
         }
 
@@ -42,16 +42,6 @@ async function userSignInController(req,res){
             success : true,
             error : false
         })
-
-        // res.cookie("token",token, {
-        //     expires:new Date(Date.now() + 25892000000),
-        //     httpOnly : true,
-        //     secure : true,
-        //     message : "Login successfully",
-        //     data : token,
-        //     success : true,
-        //     error : false
-        // })
 
        }else{
          throw new Error("Please check Password")
