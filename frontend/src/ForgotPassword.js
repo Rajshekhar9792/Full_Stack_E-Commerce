@@ -13,7 +13,7 @@ const ForgotPassword = () => {
 
     try {
       // Replace with your API endpoint
-      await fetch('/api/forgot-password', {
+      await fetch('http://localhost:8080/api/forgot-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
