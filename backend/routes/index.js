@@ -58,6 +58,7 @@ router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
 router.post("/checkout", authToken, paymentController)
 router.post("/webhook", webhooks)
 router.get("/order-list", authToken, orderController)
+// router.get("/order", authToken, orderController)
 
 
 
