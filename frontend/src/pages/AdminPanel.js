@@ -147,7 +147,7 @@ const AdminPanel = () => {
     <div className='min-h-[calc(100vh-120px)] flex flex-col md:flex-row relative'>
 
       {/* Mobile Top Navbar */}
-      <div className='md:hidden flex items-center justify-between p-4 bg-white shadow-md z-50 w-full fixed top-0 left-0'>
+      <div className='md:hidden flex items-center justify-between p-4 bg-white shadow-md fixed top-0 left-0 right-0 z-50'>
         <p className='text-lg font-bold'>Admin Panel</p>
         <button onClick={() => setSidebarOpen(!sidebarOpen)} aria-label="Toggle sidebar">
           {sidebarOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -157,7 +157,8 @@ const AdminPanel = () => {
       {/* Sidebar */}
       <aside
         className={`
-          bg-white w-64 md:w-60 h-full md:h-auto customShadow md:static fixed top-16 left-0 z-40 transition-transform duration-300 ease-in-out
+          bg-white w-64 md:w-60 h-full customShadow md:static fixed z-40 top-16 left-0
+          transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0
         `}
       >
@@ -183,7 +184,7 @@ const AdminPanel = () => {
       </aside>
 
       {/* Main content */}
-      <main className='w-full h-full p-4 mt-16 md:mt-0 bg-gray-50'>
+      <main className='w-full p-4 mt-16 md:mt-0 bg-gray-50'>
         <Outlet />
       </main>
     </div>
